@@ -1,7 +1,6 @@
 import React from "react";
 import { FiDownload, FiFolder, FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
 
 const WorkCard = ({ w, tabId }) => {
 	return (
@@ -19,9 +18,13 @@ const WorkCard = ({ w, tabId }) => {
 								<FiFolder className='work-folder' />
 								<div className='right'>
 									{w.gitlink && (
-										<Link className='work-git' to={w.gitlink} target='_blank'>
+										<a
+											className='work-git'
+											href={w.gitlink}
+											target='_blank'
+											rel='noreferrer'>
 											<FiGithub />
-										</Link>
+										</a>
 									)}
 
 									<a
@@ -47,20 +50,28 @@ const WorkCard = ({ w, tabId }) => {
 					</div>
 				</a>
 			) : (
-				<Link to={w.site} target='_blank' className='work-link-group'>
+				<a href={w.site} target='_blank' rel='noreferrer' className='work-link-group'>
 					<div className='works-card'>
 						<div className='works-container'>
 							<div className='top-work'>
 								<FiFolder className='work-folder' />
 								<div className='right'>
 									{w.gitlink && (
-										<Link className='work-git' to={w.gitlink} target='_blank'>
+										<a
+											className='work-git'
+											href={w.gitlink}
+											target='_blank'
+											rel='noreferrer'>
 											<FiGithub />
-										</Link>
+										</a>
 									)}
-									<Link className='work-link' to={w.site} target='_blank'>
+									<a
+										className='work-link'
+										href={w.site}
+										target='_blank'
+										rel='noreferrer'>
 										<IoOpenOutline />
-									</Link>
+									</a>
 								</div>
 							</div>
 							<div className='mid-work'>
@@ -74,7 +85,7 @@ const WorkCard = ({ w, tabId }) => {
 							</div>
 						</div>
 					</div>
-				</Link>
+				</a>
 			)}
 		</div>
 	);

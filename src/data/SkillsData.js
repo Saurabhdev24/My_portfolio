@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { RiVuejsLine } from "react-icons/ri";
 import {
-	SiAdobephotoshop,
+	SiCanva,
 	SiFirebase,
 	SiFramer,
 	SiNextdotjs,
@@ -35,52 +35,12 @@ export const SkillsData = [
 		icon: <DiJavascript1 />,
 	},
 	{
-		name: "TypeScript",
-		icon: <SiTypescript />,
-	},
-	{
 		name: "React Js",
 		icon: <FaReact />,
 	},
 	{
-		name: "Next Js",
-		icon: <SiNextdotjs />,
-	},
-	{
-		name: "Vue Js",
-		icon: <RiVuejsLine />,
-	},
-	{
-		name: "React Native",
-		icon: <TbBrandReactNative />,
-	},
-	{
-		name: "Redux",
-		icon: <SiRedux />,
-	},
-	{
-		name: "Firebase",
-		icon: <SiFirebase />,
-	},
-	{
 		name: "Tailwind",
 		icon: <SiTailwindcss />,
-	},
-	{
-		name: "Sass",
-		icon: <FaSass />,
-	},
-	{
-		name: "Styled Components",
-		icon: <SiStyledcomponents />,
-	},
-	{
-		name: "Framer Motion",
-		icon: <SiFramer />,
-	},
-	{
-		name: "GSAP",
-		icon: <Gsap />,
 	},
 	{
 		name: "Git",
@@ -91,7 +51,7 @@ export const SkillsData = [
 		icon: <FaFigma />,
 	},
 	{
-		name: "Photoshop",
-		icon: <SiAdobephotoshop />,
+		name: "Canva",
+		icon: <SiCanva />,
 	},
 ];

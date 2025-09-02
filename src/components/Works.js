@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Works.css";
 import { motion } from "framer-motion";
-import { ReactData, ReactNativeData, VueData } from "../data/WorkData";
+import { ReactData, VueData, ReactNativeData } from "../data/WorkData";
 import WorkCard from "./WorkCard";
 
 const Works = () => {
-	const [activeTab, setActiveTab] = useState("react");
-
 	const fade = {
 		opacity: 1,
 		transition: {
@@ -14,11 +12,8 @@ const Works = () => {
 		},
 	};
 
-	const tabData = [
-		{ id: "react", label: "React", data: ReactData },
-		{ id: "vue", label: "Vue", data: VueData },
-		{ id: "react-native", label: "React Native", data: ReactNativeData },
-	];
+	// Combine all projects into one array
+	const allProjects = [...ReactData, ...VueData, ...ReactNativeData];
 
 	return (
 		<div className='works' id='works'>
@@ -32,31 +27,13 @@ const Works = () => {
 					<p className='heading-text'>Works</p>
 				</motion.div>
 
-				<div className='tabs'>
-					{tabData.map((tab) => (
-						<button
-							key={tab.id}
-							className={`tab ${activeTab === tab.id ? "active" : ""}`}
-							onClick={() => setActiveTab(tab.id)}>
-							{tab.label}
-						</button>
-					))}
-				</div>
-
 				<motion.div
 					className='works-box'
 					initial={{ opacity: 0 }}
 					whileInView={fade}>
-					{tabData.map(
-						(tab) =>
-							activeTab === tab.id && (
-								<React.Fragment key={tab.id}>
-									{tab.data.map((w, index) => (
-										<WorkCard w={w} tabId={tab.id} key={index} />
-									))}
-								</React.Fragment>
-							)
-					)}
+					{allProjects.map((w, index) => (
+						<WorkCard w={w} tabId="react" key={index} />
+					))}
 				</motion.div>
 			</div>
 		</div>
